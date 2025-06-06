@@ -1,0 +1,11 @@
+pages:
+  stage: deploy
+  script:
+    - mkdir .public
+    - cp -r * .public # 将所有文件复制到 .public 目录
+    - mv .public public # 将 .public 目录重命名为 public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main # 或 master，根据你的主分支名称
